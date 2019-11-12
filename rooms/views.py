@@ -14,10 +14,19 @@ class HomeView(ListView):
     ordering = "created"
     context_object_name = "rooms"
 
+    #
+    # get the logged in user information
+    #
     # def get_context_data(self, **kwargs):
     #     ctx = super(HomeView, self).get_context_data(**kwargs)
-    #     ctx["test"] = self.request.user.first_name
+    #     ctx["test"] = self.request.user
     #     return ctx
+
+    #
+    # filter results with values
+    #
+    # def get_queryset(self):
+    #     return models.Room.objects.filter(country="BO")
 
 
 class RoomDetail(DetailView):

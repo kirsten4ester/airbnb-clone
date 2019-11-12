@@ -20,6 +20,7 @@ class CustomUserAdmin(UserAdmin):
                     "language",
                     "currency",
                     "superhost",
+                    "email_verified",
                     "login_method",
                 )
             },
