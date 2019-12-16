@@ -9,18 +9,20 @@ Search
 
 {% block content %}
 
-<h2>Search!</h2>
+<h2 style="text-align: center; font-size: 30px; font-weight: bold; margin: 20px 0;">Search!</h2>
 
-<form method="get" action="{% url "rooms:search" %}">
-    {{form.as_p}}
-    <button>Search</button>
-</form>
+<div style="width: 60%; margin: 0 auto;">
+    <form method="get" action="{% url "rooms:search" %}">
+        {{form.as_p}}
+        <button style="border: 1px solid; padding: 5px 10px; border-radius: 5px; margin: 20px 0;">Search</button>
+    </form>
+</div>
 
-<h3>Results</h3>
-
-{% for room in rooms %}
-<h3>{{room.name}}</h3>
-{% endfor %}
-
+<div style="width: 90%; margin: 10px auto;">
+    <h3 style="font-size: 20px; font-weight: bold;">Results</h3>
+    {% for room in rooms %}
+    {% include 'mixins/room_card.html' with room=room %}
+    {% endfor %}
+</div>
 
 {% endblock content %}
