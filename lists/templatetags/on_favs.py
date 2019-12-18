@@ -16,5 +16,8 @@ def on_favs(context, room):
         )
 
         # the original code starts
-        return room in the_list.rooms.all()
+        if the_list == None:
+            return 0
+        else:
+            return room in the_list.rooms.all()
         # the original code ends
